@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://release.maven.retrylife.ca"
+    }
+    maven {
+        url "http://clojars.org/repo/"
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation( "com.raylib:jaylib:3.0.0-rc5")
+    implementation("kryonet:kryonet:2.21")
+}
+
+test {
+    useJUnitPlatform()
+}
